@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meven Menou</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-a: #EEEFF1;
+    --bg-b: #E2E4E7;
+    --text: #17181A;
+    --muted: #666B70;
+    --line: #D3D6D9;
+    --accent: #2B2C2E;
+    --card: #FFFFFF;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; }
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: linear-gradient(160deg, var(--bg-a), var(--bg-b));
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 32px 20px;
+    line-height: 1.6;
+  }
+
+  .card{
+    max-width: 560px;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: clamp(32px, 6vw, 56px);
+    box-shadow: 0 1px 2px rgba(20,22,25,0.04), 0 20px 48px -24px rgba(20,22,25,0.18);
+    text-align: center;
+  }
+
+  .monogram{
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    border-radius: 14px;
+    background: var(--text);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  h1{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: clamp(30px, 5.5vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .kicker{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .rule{
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 22px auto;
+    border-radius: 2px;
+  }
+
+  p.bio{
+    color: var(--muted);
+    font-size: 15.5px;
+    text-align: left;
+  }
+
+  p.bio strong{
+    color: var(--text);
+  }
+
+  .links{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .links a:hover{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #FFFFFF;
+  }
+
+  .links a:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="monogram">MM</div>
+    <h1>Meven Menou</h1>
+    <div class="kicker">Mechanical Engineer · Product Design &amp; Industrialisation</div>
+    <div class="rule"></div>
+
+    <!-- Écris ta présentation ici (2-3 phrases) -->
+    <p class="bio">
+      Mechanical Engineer specialised in product design and industrialisation, with proven
+      experience taking products from R&amp;D and concept development through to industrialisation
+      and market launch. Strong expertise in 2D/3D CAD, manufacturing processes, product
+      development, and engineering data management, with hands-on experience supporting
+      production and cross-functional teams.
+      <br><br>
+      Currently delivering a SolidWorks–Windchill PDM implementation for Quad Lock, including
+      CAD migration, data structuring, workflow development and user training.
+      <br><br>
+      <strong>Available for my next engineering opportunity in Melbourne from October 2026.
+      Notice period — 3 weeks.</strong>
+    </p>
+
+    <div class="links">
+      <a href="portfolio.pdf" target="_blank" rel="noopener">View Portfolio</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <a href="https://www.linkedin.com/in/mevenm/" target="_blank" rel="noopener">LinkedIn Profile</a>
+    </div>
+  </div>
+
+</body>
+</html>
