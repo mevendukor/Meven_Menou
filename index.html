@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Meven Menou</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,13 @@
 
   *{ box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body{
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: pan-y;
+  }
+
   body{
     background: linear-gradient(160deg, var(--bg-a), var(--bg-b));
     color: var(--text);
@@ -32,26 +39,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 32px 20px;
-    line-height: 1.6;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0;
+    line-height: 1.5;
   }
 
   .card{
-    max-width: 560px;
     width: 100%;
+    height: 100%;
     background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: clamp(32px, 6vw, 56px);
-    box-shadow: 0 1px 2px rgba(20,22,25,0.04), 0 20px 48px -24px rgba(20,22,25,0.18);
+    border-radius: 0;
+    padding: clamp(24px, 4.5vh, 48px) clamp(24px, 6vw, 48px);
+    padding-top: max(clamp(24px, 4.5vh, 48px), env(safe-area-inset-top));
+    padding-bottom: max(clamp(24px, 4.5vh, 48px), env(safe-area-inset-bottom));
     text-align: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px){
+    body{ padding: 32px; }
+    .card{
+      width: 75vw;
+      max-width: 640px;
+      height: 75vh;
+      max-height: 720px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 1px 2px rgba(20,22,25,0.04), 0 20px 48px -24px rgba(20,22,25,0.18);
+    }
   }
 
   .monogram{
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 24px;
+    width: clamp(40px, 8vh, 56px);
+    height: clamp(40px, 8vh, 56px);
+    margin: 0 auto clamp(12px, 3vh, 24px);
     border-radius: 14px;
     background: var(--text);
     color: #fff;
@@ -59,21 +85,22 @@
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    font-size: 19px;
+    font-size: clamp(15px, 3vh, 19px);
     font-weight: 700;
     letter-spacing: 0.02em;
+    flex-shrink: 0;
   }
 
   h1{
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-size: clamp(30px, 5.5vw, 40px);
+    font-size: clamp(24px, 4.5vh, 40px);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
 
   .kicker{
     margin-top: 10px;
-    font-size: 12px;
+    font-size: clamp(10px, 1.6vh, 12px);
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -84,14 +111,16 @@
     width: 40px;
     height: 2px;
     background: var(--accent);
-    margin: 22px auto;
+    margin: clamp(14px, 3vh, 22px) auto;
     border-radius: 2px;
+    flex-shrink: 0;
   }
 
   p.bio{
     color: var(--muted);
-    font-size: 15.5px;
+    font-size: clamp(13px, 1.9vh, 15.5px);
     text-align: left;
+    line-height: 1.55;
   }
 
   p.bio strong{
@@ -101,21 +130,22 @@
   .links{
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 32px;
+    gap: clamp(8px, 1.6vh, 12px);
+    margin-top: clamp(16px, 3.5vh, 32px);
+    flex-shrink: 0;
   }
 
   .links a{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 20px;
+    padding: clamp(10px, 2vh, 14px) 20px;
     border: 1px solid var(--line);
     border-radius: 10px;
     background: #FFFFFF;
     color: var(--text);
     text-decoration: none;
-    font-size: 14.5px;
+    font-size: clamp(13px, 1.9vh, 14.5px);
     font-weight: 500;
     letter-spacing: 0.01em;
     transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
@@ -157,8 +187,8 @@
     </p>
 
     <div class="links">
-      <a href="portfolio.pdf" target="_blank" rel="noopener">View Portfolio</a>
-      <a href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <a href="portfolio.html" target="_blank" rel="noopener">View Portfolio</a>
+      <a href="resume.html" target="_blank" rel="noopener">View Resume</a>
       <a href="https://www.linkedin.com/in/mevenm/" target="_blank" rel="noopener">LinkedIn Profile</a>
     </div>
   </div>
